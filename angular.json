@@ -23,13 +23,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.less"],
             "scripts": []
           },
           "configurations": {
@@ -60,6 +55,15 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": false
             }
           }
         },
@@ -71,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "kalkulatory-budowlane:build:production"
+            },
+            "develop": {
+              "browserTarget": "kalkulatory-budowlane:build:develop"
             }
           }
         },
@@ -87,13 +94,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.less"],
             "scripts": []
           }
         },
@@ -105,9 +107,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +123,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "kalkulatory-budowlane"
 }
