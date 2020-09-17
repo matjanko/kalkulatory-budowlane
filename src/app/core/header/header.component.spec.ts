@@ -6,24 +6,40 @@ import { HeaderComponent } from './header.component';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
+  let htmlElement: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    htmlElement = fixture.debugElement.nativeElement;
   });
 
   it('should create', () => {
+    //then
     expect(component).toBeTruthy();
   });
 
-  it('should have header tag', () => {
-    expect(component).toBeTruthy();
+  it('should html start with "<header>" tag', () => {
+    //given
+    let tag = htmlElement.innerHTML.slice(0, 8);
+
+    //then
+    expect(tag).toEqual('<header>');
+  });
+
+  it('should html end with "</header>" tag', () => {
+    //given
+    let tag = htmlElement.innerHTML.slice(
+      htmlElement.innerHTML.length - 9,
+      htmlElement.innerHTML.length
+    );
+
+    //then
+    expect(tag).toEqual('</header>');
   });
 });

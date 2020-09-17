@@ -4,12 +4,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, CoreModule],
       declarations: [AppComponent],
     }).compileComponents();
-  }));
+  });
 
   it('should create', () => {
     const fixture = TestBed.createComponent(AppComponent);
