@@ -18,7 +18,6 @@ install:
   - npm install
 
 script:
-  - ng lint
   - npm test
   - ng build --prod --base-href https://matjanko.github.io/kalkulatory-budowlane/
 
