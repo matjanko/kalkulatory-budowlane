@@ -1,33 +1,7 @@
-//Color definition
-@ColorOne: rgb(242, 242, 242);
 
-@HeaderBackgroundColor: @ColorOne;
-
-@FooterBorderTopColor: @ColorOne;
-
-@HeaderMinHeight: 70px;
-
-@FooterMinHeight: 200px;
+@MaxWidth: 1200px;
 
 html,
 body {
   margin: 0px;
-}
-
-header {
-  background-color: @HeaderBackgroundColor;
-  min-height: @HeaderMinHeight;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 1200px;
-}
-
-footer {
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: @FooterBorderTopColor;
-  min-height: @FooterMinHeight;
 }
