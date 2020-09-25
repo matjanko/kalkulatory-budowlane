@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { SheetsModule } from './sheets/sheets.module';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 
 
 
@@ -11,7 +12,8 @@ import {RouterModule} from '@angular/router';
   imports: [
     CommonModule,
     SheetsModule,
-    RouterModule
+    RouterModule,
+    SharedComponentsModule
   ]
 })
 export class MainModule { }
