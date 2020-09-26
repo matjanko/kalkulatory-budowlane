@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Sheet } from '../../shared/models/sheet-list/sheet';
 import { SheetService } from '../../shared/services/sheet.service';
 import { NavigationEnd, Router} from '@angular/router';
-import {filter, map} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -39,6 +39,6 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   private getSheetByPath(path: string): Sheet {
-    return this.sheets.find(s => s.path === path);
+    return this.sheets.find(s => s?.path === path);
   }
 }
