@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Sheet } from '../../shared/models/sheet-list/sheet';
 import { SheetService } from '../../shared/services/sheet.service';
 import { NavigationEnd, Router} from '@angular/router';
@@ -18,8 +18,8 @@ export class MainComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();
 
   constructor(
-    private router: Router,
-    private sheetService: SheetService
+    private readonly router: Router,
+    private readonly sheetService: SheetService
   ) {}
 
   ngOnInit(): void {

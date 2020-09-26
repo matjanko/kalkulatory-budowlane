@@ -1,19 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SnowLoadSheetComponent } from './snow-load-sheet.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('SnowLoadSheetComponent', () => {
   let component: SnowLoadSheetComponent;
   let fixture: ComponentFixture<SnowLoadSheetComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ SnowLoadSheetComponent ]
+      declarations: [ SnowLoadSheetComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(SnowLoadSheetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
