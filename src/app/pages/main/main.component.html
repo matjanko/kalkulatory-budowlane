@@ -1,8 +1,12 @@
 <main>
-  <div class="sheet-list-container">lista kalkulatorów</div>
+  <div class="sheet-list-container">
+    <app-sheet-list [sheets]="sheets"></app-sheet-list>
+  </div>
   <div class="sheet-container">
     <div>
-      <app-sheet-name-label name="Tutaj przekazac nazwe kalkulatora"></app-sheet-name-label>
+      <app-sheet-name-label
+        name="{{ sheetName }}">
+      </app-sheet-name-label>
     </div>
     <div>
       <router-outlet></router-outlet>

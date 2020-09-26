@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sheet } from '../../shared/models/sheet-list/sheet';
+import { SheetService } from '../../shared/services/sheet.service';
 
 @Component({
   selector: 'app-main',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.less'],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  sheetName: string;
+  sheets = new Array<Sheet>();
+
+  constructor(private sheetService: SheetService) {}
+
+  ngOnInit(): void {
+    this.sheets = this.sheetService.getSheets();
+  }
 }

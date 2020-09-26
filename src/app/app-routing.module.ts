@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
-import {ConcreteCoverSheetComponent} from './pages/main/sheets/concrete-cover-sheet/concrete-cover-sheet.component';
-import {SnowLoadSheetComponent} from './pages/main/sheets/snow-load-sheet/snow-load-sheet.component';
+import { ConcreteCoverSheetComponent } from './pages/main/sheets/concrete-cover-sheet/concrete-cover-sheet.component';
+import { SnowLoadSheetComponent } from './pages/main/sheets/snow-load-sheet/snow-load-sheet.component';
 
 const routes: Routes = [
   {
@@ -11,11 +11,17 @@ const routes: Routes = [
     children: [
       {
         path: 'otulina-w-betonie',
-        component: ConcreteCoverSheetComponent
+        component: ConcreteCoverSheetComponent,
+        data: {
+          title: 'Otulina w betonie'
+        }
       },
       {
         path: 'obciazenie-sniegiem',
-        component: SnowLoadSheetComponent
+        component: SnowLoadSheetComponent,
+        data: {
+          title: 'Obciążenie śniegiem'
+        }
       }
     ]
   },
