@@ -1,0 +1,33 @@
+@import "../../../styles.less";
+
+main {
+  padding-top: 100px;
+  min-height: 1200px;
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: @MaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    vertical-align: top;
+
+    &.sheet-list-container {
+      min-width: 250px;
+      max-width: 250px;
+      padding-bottom: 30px;
+    }
+
+    &.sheet-container {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+}

@@ -1,1 +1,15 @@
-<main>Strona główna</main>
+<main>
+  <div class="sheet-list-container">
+    <app-sheet-list [sheets]="sheets"></app-sheet-list>
+  </div>
+  <div class="sheet-container">
+    <div>
+      <app-sheet-name-label
+        name="{{ selectedSheet?.title }}">
+      </app-sheet-name-label>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
