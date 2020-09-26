@@ -8,14 +8,26 @@ main {
   max-width: @MaxWidth;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
 
   > div {
-    display: inline-block;
     vertical-align: top;
 
     &.sheet-list-container {
       min-width: 250px;
       max-width: 250px;
+      padding-bottom: 30px;
     }
+
+    &.sheet-container {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
   }
 }
