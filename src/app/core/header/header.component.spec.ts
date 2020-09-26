@@ -1,5 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 
@@ -20,26 +19,26 @@ describe('HeaderComponent', () => {
   });
 
   it('should create', () => {
-    //then
+    // then
     expect(component).toBeTruthy();
   });
 
   it('should html start with "<header>" tag', () => {
-    //given
-    let tag = htmlElement.innerHTML.slice(0, 8);
+    // given
+    const tag = htmlElement.innerHTML.slice(0, 8);
 
-    //then
+    // then
     expect(tag).toEqual('<header>');
   });
 
   it('should html end with "</header>" tag', () => {
-    //given
-    let tag = htmlElement.innerHTML.slice(
+    // given
+    const tag = htmlElement.innerHTML.slice(
       htmlElement.innerHTML.length - 9,
       htmlElement.innerHTML.length
     );
 
-    //then
+    // then
     expect(tag).toEqual('</header>');
   });
 });
