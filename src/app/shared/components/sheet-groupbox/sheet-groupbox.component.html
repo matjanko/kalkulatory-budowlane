@@ -1,4 +1,8 @@
-<label class="sheet-groupbox-header">{{ header }}</label>
-<div class="sheet-groupbox-content" [style.width.px]="width">
-  <ng-content></ng-content>
+<div class="sheet-groupbox-container">
+  <div class="sheet-groupbox-header">
+    <label>{{ header }}</label>
+  </div>
+  <div class="sheet-groupbox-content">
+    <ng-content></ng-content>
+  </div>
 </div>

@@ -1,13 +1,34 @@
-label.sheet-groupbox-header {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  background-color: white;
 
-}
+@HeaderBackgroundColor: rgb(250, 250, 250);
 
-div.sheet-groupbox-content {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  padding: 15px 10px 10px;
+@BorderWidth: 2px;
+@BorderRadius: 4px;
+
+div.sheet-groupbox-container {
+  border: none;
+  border-radius: @BorderRadius;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.18);
+  min-width: 300px;
+
+  div.sheet-groupbox-header {
+    background-color: @HeaderBackgroundColor;
+    border-top-right-radius: @BorderRadius - @BorderWidth;
+    border-top-left-radius: @BorderRadius - @BorderWidth;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  div.sheet-groupbox-content {
+    padding: 10px 20px;
+
+
+    ::ng-deep {
+      table {
+
+      }
+    }
+  }
+
 }
