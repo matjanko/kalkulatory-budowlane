@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Sheet } from '../../shared/models/sheet-list/sheet';
 import { SheetService } from '../../shared/services/sheet.service';
-import { NavigationEnd, Router} from '@angular/router';
-import { filter, map } from 'rxjs/operators';
+import { ActivatedRoute, ActivationEnd, Router} from '@angular/router';
 import { Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -13,32 +13,29 @@ import { Subscription } from 'rxjs';
 export class MainComponent implements OnInit, OnDestroy {
 
   sheets = new Array<Sheet>();
-  selectedSheet: Sheet;
+  sheetTitle: string;
 
   private subscription = new Subscription();
 
   constructor(
     private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute,
     private readonly sheetService: SheetService
   ) {}
 
   ngOnInit(): void {
     this.sheets = this.sheetService.getSheets();
-    this.selectedSheet = this.getSheetByPath(this.router.url);
+    this.sheetTitle = this.activatedRoute.firstChild?.snapshot?.data?.title;
 
     this.subscription.add(this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      map(event => event as NavigationEnd)
-    ).subscribe(event => {
-      this.selectedSheet = this.getSheetByPath(event.url);
+      filter(event => event instanceof ActivationEnd && event.snapshot?.data?.title),
+      map((event: ActivationEnd) => event.snapshot.data.title)
+    ).subscribe(title => {
+      this.sheetTitle = title;
     }));
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-
-  private getSheetByPath(path: string): Sheet {
-    return this.sheets.find(s => s?.path === path);
   }
 }
